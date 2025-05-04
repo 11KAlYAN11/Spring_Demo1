@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define Tyre Beans -->
+    <bean id="tyre1" class="com.example.Tyre">
+        <constructor-arg value="Michelin" />
+    </bean>
+
+    <bean id="tyre2" class="com.example.Tyre">
+        <constructor-arg value="Bridgestone" />
+    </bean>
+
+    <!-- Car with Constructor Injection -->
+    <bean id="carConstructor" class="com.example.Car">
+        <constructor-arg ref="tyre1" />
+    </bean>
+
+    <!-- Car with Setter Injection -->
+    <bean id="carSetter" class="com.example.Car">
+        <property name="tyre" ref="tyre1" />
+    </bean>
+
+    <!-- Bike with Constructor Injection -->
+    <bean id="bikeConstructor" class="com.example.Bike">
+        <constructor-arg ref="tyre2" />
+    </bean>
+
+    <!-- Bike with Setter Injection -->
+    <bean id="bikeSetter" class="com.example.Bike">
+        <property name="tyre" ref="tyre2" />
+    </bean>
+</beans>
