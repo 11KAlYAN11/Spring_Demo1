@@ -12,6 +12,13 @@ public class Car implements Vehicle {
     public Car() {
     }
         
+    /**
+     * The function sets the tyre object for a given vehicle.
+     * 
+     * @param tyre The `setTyre` method is used to set the `tyre` property of an object to the provided
+     * `Tyre` object. This method takes a `Tyre` object as a parameter and assigns it to the `tyre`
+     * property of the object.
+     */
     public void setTyre(Tyre tyre) {
         this.tyre = tyre;
     }
