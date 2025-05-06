@@ -1,27 +1,30 @@
 package com.example;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-@Component("bikeSetter") // Bean name for Setter Injection
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 public class Bike implements Vehicle {
     private Tyre tyre;
-    
-    // For Constructor Injection
+
+    // Constructor for Constructor Injection
     @Autowired
-    public Bike(Tyre tyre) {
+    public Bike(@Qualifier("tyreBridgestone") Tyre tyre) {
         this.tyre = tyre;
     }
 
-    // For Setter Injection (we'll use this in the XML config for another bean)
+    // Default constructor for Setter Injection
     public Bike() {
     }
-    
+
+    // Setter for Setter Injection
+    @Autowired
+    @Qualifier("tyreBridgestone")
     public void setTyre(Tyre tyre) {
         this.tyre = tyre;
     }
 
-    @Override 
+    @Override
     public void drive() {
-        System.out.println("Riding a bikie with "+ tyre);
+        System.out.println("Riding a bike with " + tyre);
     }
 }

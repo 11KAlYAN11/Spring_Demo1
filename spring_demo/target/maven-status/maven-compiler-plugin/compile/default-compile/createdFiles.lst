@@ -1,5 +1,6 @@
-com/example/Tyre.class
 com/example/App.class
 com/example/Car.class
+com/example/Tyre.class
+com/example/TyreConfig.class
 com/example/Bike.class
 com/example/Vehicle.class
