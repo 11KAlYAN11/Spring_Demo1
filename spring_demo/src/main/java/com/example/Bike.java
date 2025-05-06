@@ -1,9 +1,13 @@
 package com.example;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component("bikeSetter") // Bean name for Setter Injection
 public class Bike implements Vehicle {
     private Tyre tyre;
     
     // For Constructor Injection
+    @Autowired
     public Bike(Tyre tyre) {
         this.tyre = tyre;
     }
