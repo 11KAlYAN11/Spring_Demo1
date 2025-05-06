@@ -1,14 +1,10 @@
 package com.example;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-
 public class Bike implements Vehicle {
     private Tyre tyre;
 
     // Constructor for Constructor Injection
-    @Autowired
-    public Bike(@Qualifier("tyreBridgestone") Tyre tyre) {
+    public Bike(Tyre tyre) {
         this.tyre = tyre;
     }
 
@@ -17,8 +13,6 @@ public class Bike implements Vehicle {
     }
 
     // Setter for Setter Injection
-    @Autowired
-    @Qualifier("tyreBridgestone")
     public void setTyre(Tyre tyre) {
         this.tyre = tyre;
     }
